@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Data.Models;
+using Directory = Data.Models.Directory;
 
-namespace Data.Models
+namespace Data.DatabaseContext
 {
     public partial class Resolve360Context : DbContext
     {

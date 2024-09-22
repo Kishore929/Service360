@@ -1,4 +1,5 @@
-﻿using Data.Context;
+﻿
+using Data.DatabaseContext;
 using Data.Models;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Data.Repositories.Authentication
                 int count = _resolve360Context.SaveChanges();
                 if (count > 0)
                 {
-                    return SearchUser(user.Email);
+                    return SearchUser(user.EmailAddress);
                 }
                 return null;
             }
@@ -39,7 +40,7 @@ namespace Data.Repositories.Authentication
         {
             try
             {
-                var search = _resolve360Context.User.Where(x => x.Email == email).FirstOrDefault();
+                var search = _resolve360Context.Users.Where(x => x.EmailAddress == email).FirstOrDefault();
                     
                 return search;
 
@@ -55,7 +56,7 @@ namespace Data.Repositories.Authentication
         {
             try
             {
-                var search = _resolve360Context.User.Where(x => (x.Email.ToLower() == email.ToLower() || x.UserName.ToLower() == userName.ToLower())).FirstOrDefault();
+                var search = _resolve360Context.Users.Where(x => (x.EmailAddress.ToLower() == email.ToLower() || x.UserName.ToLower() == userName.ToLower())).FirstOrDefault();
 
                 return search;
 
@@ -69,7 +70,7 @@ namespace Data.Repositories.Authentication
         }
         public User SearchUser(string email,string userName,string password)
         {
-            var search = _resolve360Context.User.Where(x => (x.Email.ToLower() == email.ToLower() || x.UserName.ToLower() == userName.ToLower()) && x.PasswordHash == password).FirstOrDefault();
+            var search = _resolve360Context.Users.Where(x => (x.EmailAddress.ToLower() == email.ToLower() || x.UserName.ToLower() == userName.ToLower()) && x.PasswordHash == password).FirstOrDefault();
 
             return search;
         }

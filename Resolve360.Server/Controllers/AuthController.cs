@@ -16,7 +16,7 @@ namespace Resolve360.Server.Controllers
             _authProvider = authprovider;
         }
         [HttpPost("RegisterUser")]
-        public ClientResponse<User> RegisterStudent([FromBody] User user)
+        public ClientResponse<User> RegisterUser([FromBody] User user)
         {
             var reg = _authProvider.RegisterUser(user);
             return reg;

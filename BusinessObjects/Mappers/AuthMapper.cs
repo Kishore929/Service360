@@ -19,8 +19,8 @@ namespace BusinessObjects.Mappers
                 Models.User _user = new Models.User();
 
                 _user.UserName = user?.UserName;
-                _user.PasswordHash = user?.PasswordHash;
-                _user.Email = user?.Email;
+                _user.PasswordHash = user?.Password;
+                _user.EmailAddress = user?.EmailAddress;
 
                 return _user;
             }
@@ -38,7 +38,7 @@ namespace BusinessObjects.Mappers
                 _user.Id = user.Id;
                 _user.UserName = user?.UserName;
                 //_user.PasswordHash = user?.PasswordHash;
-                _user.Email = user?.Email;
+                _user.EmailAddress = user?.EmailAddress;
                 return _user;
 
             }
