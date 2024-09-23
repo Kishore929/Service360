@@ -10,5 +10,10 @@ namespace Data.Repositories.Administration
     public interface IAdminRepository
     {
         public List<TicketType> GetTicketTypes();
+        public List<Status> GetStatuses();
+        public List<Resolution> GetResolutions();
+        public List<Priority> GetPriorities();
+        public List<ProjectRole> GeProjectRoles();
     }
+    
 }

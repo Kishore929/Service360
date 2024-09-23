@@ -11,5 +11,9 @@ namespace BusinessObjects.Providers
     public interface IAdminProvider
     {
         public ClientResponse<List<TicketType>> GetTicketTypes();
+        public ClientResponse<List<Status>> GetStatuses();
+        public ClientResponse<List<Resolution>> GetResolutions();
+        public ClientResponse<List<Priority>> GetPriorities();
+        public ClientResponse<List<ProjectRole>> GetProjectRoles();
     }
 }

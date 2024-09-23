@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class TicketType
+    public class ProjectRole
     {
         public long Id { get; set; }
         public string Name { get; set; }
         public string? Description { get; set; }
-        public string? AvatarUrl { get; set; }
     }
 }

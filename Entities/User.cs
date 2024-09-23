@@ -15,9 +15,6 @@ namespace Entities
         public string UserName { get; set; } 
         public string EmailAddress { get; set; }
         public string Password { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
-        public bool? IsActive { get; set; }
         public string? UserProfilePictureUrl { get; set; }
         public bool? IsLicensed { get; set; }
         public string? ActiveToken { get; set; }
