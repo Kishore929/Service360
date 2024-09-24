@@ -1,47 +1,68 @@
-/* src/Components/AdminNavBar.css */
+/* src/components/AdminNavBar.css */
+
+/* Remove border from the content and adjust the styles */
+.content {
+  padding: 20px; /* Maintain padding for inner spacing */
+  flex: 10; /* Take remaining space */
+  margin-left: 0; /* Remove left margin to align with the navbar */
+  background-color: white; /* Optional: Add a light background color */
+}
 
 /* Navbar Styles */
 .admin-navbar {
-    background-color: var(--main-bg-color);
-    padding: 0; /* Remove padding to fit tightly */
-    border-bottom: 1px solid #ccc;  
-    margin: 0;
-    margin-top: 100px;
-    z-index: 100; /* Ensure it’s above other content */
-  }
-  
-  /* Custom scrollbar styles (optional) */
-  ::-webkit-scrollbar {
-      width: 8px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
-  }
-  
-  .navbar-admin {
-    height: 40px; /* Reduced height for a slimmer navbar */
-    
-  }
-  
-  /* Align items in the navbar */
-  .navbar-nav-admin {
-    margin-left: 0; /* Align items to the left */
-  }
-  
-  /* Nav Link Styles */
-  .navbar-nav-admin .nav-link-admin {
-    color: black !important; /* Force text color to black */
-    padding: 4px 6px; /* Minimal padding for nav items */
-    transition: background-color 0.3s; /* Smooth transition for hover effects */
-  }
-  
-  .navbar-nav-admin .nav-link-admin:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Optional: Add a hover effect */
-  }
-  
+  background-color: var(--main-bg-color);
+  padding: 0; /* Remove padding to fit tightly */
+  border-bottom: 2px solid #ccc;  
+  margin: 0;
+  margin-top: 100px; /* This creates space above the navbar */
+  z-index: 100; /* Ensure it’s above other content */
+  height: 30px;
+  width: 100%; /* Reduced height for a slimmer navbar */
+}
+
+/* Ensure the app flex container takes the full width */
+.app {
+  display: flex; /* Use flexbox for layout */
+  position: relative;
+  margin-top: 28px; /* Space below the navbar */
+  width: 100%; /* Full width to fill the container */
+}
+
+.navbar {
+  margin-right: 0px;
+  position: absolute;
+}
+
+.nav-link-admin .nav-link {
+  color: black !important; /* Set text color to black */
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* For positioning the underline */
+}
+
+.nav-link-admin .nav-link:hover,
+.nav-link-admin .nav-link:focus {
+  color: #0056b3 !important; /* Optional: Change color on hover */
+}
+
+
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.sidebar li {
+  cursor: pointer;
+  margin: 3;
+  padding: 5px;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background: #cecae3;
+}

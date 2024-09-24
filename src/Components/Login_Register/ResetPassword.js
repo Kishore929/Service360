@@ -1,6 +1,6 @@
 // src/ResetPassword.js
 import React, { useState } from 'react';
-import './ResetPassword.css';
+import './Login_Register.css';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -24,11 +24,11 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="reset-password-container">
-      <h1><b>Reset Password</b></h1>
+    <div className="login-register-container">
+      <h3 align='center' style={{ color: '#0052cc' }} ><b>Reset Password</b></h3>
       {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit} className="reset-password-form">
-        <div className="form-group">
+      <form onSubmit={handleSubmit} className="login-register-form login-register-text-label">
+        <div className="login-register-form-group">
           <label htmlFor="new-password">New Password</label>
           <input
             type="password"
@@ -39,7 +39,7 @@ const ResetPassword = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="login-register-form-group">
           <label htmlFor="confirm-password">Confirm Password</label>
           <input
             type="password"
@@ -50,7 +50,7 @@ const ResetPassword = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Reset Password</button>
+        <button type="submit" className="login-register-submit-button">Reset Password</button>
       </form>
     </div>
   );

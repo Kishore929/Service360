@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './LoginPage.css';
+import './Login_Register.css';
 import { useNavigate, Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -10,14 +10,15 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ email, password });
-    navigate('/home'); // Redirect after successful login
+    onLogin(); // Call the onLogin function to update the state in App
+    navigate('/home'); // Navigate to home after login
   };
 
   return (
-    <div className="login-container">
-      <h1><b>Login</b></h1>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="form-group">
+    <div className="login-register-container">
+      <h3 align='center' style={{ color: '#0052cc' }} ><b>Login</b></h3>
+      <form className="login-register-form login-register-text-label" onSubmit={handleSubmit}>
+        <div className="login-register-form-group">
           <label htmlFor="email">Email or Username</label>
           <input
             type="text"
@@ -28,7 +29,7 @@ const LoginPage = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="login-register-form-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -39,7 +40,7 @@ const LoginPage = () => {
             required
           />
         </div>
-        <button type="submit" className="login-button">Log In</button>
+        <button type="submit" className="login-register-submit-button">Log In</button>
         <div style={{ textAlign: 'center', marginTop: '15px', fontSize: '0.9em' }}>
           <Link to="/register">Don't have an account? Register</Link>
           <br />

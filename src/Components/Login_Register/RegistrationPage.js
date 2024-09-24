@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './Registration.css';
+import './Login_Register.css';
 import { useNavigate,Link } from 'react-router-dom';
+import { Col } from 'react-bootstrap';
 
 
 const RegisterPage = () => {
@@ -19,10 +20,10 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div className="register-container">
-        <h1><b>Create Account</b></h1>
-        <form className="register-form" onSubmit={handleSubmit}>
-          <div className="form-group">
+      <div className="login-register-container">
+      <h3 align='center' style={{ color: '#0052cc' }} ><b>Create Account</b></h3>
+        <form className="login-register-form login-register-text-label" onSubmit={handleSubmit}>
+          <div className="login-register-form-group ">
             <label htmlFor="firstName">First Name</label>
             <input
               type="text"
@@ -33,7 +34,7 @@ const RegisterPage = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="login-register-form-group">
             <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
@@ -44,7 +45,7 @@ const RegisterPage = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="login-register-form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -55,7 +56,7 @@ const RegisterPage = () => {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="login-register-form-group">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -66,7 +67,7 @@ const RegisterPage = () => {
               required
             />
           </div>
-          <button type="submit" className="register-button">Register</button>
+          <button type="submit" className="login-register-submit-button">Register</button>
         </form>
         <div style={{ textAlign: 'center', marginTop: '15px', fontSize: '0.9em' }}>
           <Link to="/login">Already have an account? Log In</Link>

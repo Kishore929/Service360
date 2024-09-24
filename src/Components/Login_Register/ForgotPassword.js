@@ -1,6 +1,6 @@
 // src/ForgotPassword.js
 import React, { useState } from 'react';
-import './ForgotPassword.css'; 
+import './Login_Register.css';
 
 
 const ForgotPassword = () => {
@@ -15,11 +15,11 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="forgot-password-container">
-      <h1><b>Forgot Password</b></h1>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit} className="forgot-password-form">
-        <div className="form-group">
+    <div className="login-register-container">
+      <h3 align='center' style={{ color: '#0052cc' }} ><b>Forgot Password</b></h3>
+      {<p>{message}</p>}
+      <form onSubmit={handleSubmit} className="login-register-form login-register-text-label">
+        <div className="login-register-form-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -30,7 +30,7 @@ const ForgotPassword = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Send Reset Link</button>
+        <button type="submit" className="login-register-submit-button">Send Reset Link</button>
       </form>
     </div>
   );

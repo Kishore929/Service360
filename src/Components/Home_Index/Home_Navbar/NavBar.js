@@ -1,15 +1,16 @@
 import React from 'react';
 import { Button, Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dashboard from '../NavBarLabels/DashBoards';
-import Project from '../NavBarLabels/Projects';
-import Ticket from '../NavBarLabels/Tickets';
-import Boards from '../NavBarLabels/Boards';
-import Plans from '../NavBarLabels/Plans';
-import Assets from '../NavBarLabels/Assets';
+import Dashboard from '../Home_NavBar_Labels/DashBoards';
+import Project from '../Home_NavBar_Labels/Projects';
+import Ticket from '../Home_NavBar_Labels/Tickets';
+import Boards from '../Home_NavBar_Labels/Boards';
+import Plans from '../Home_NavBar_Labels/Plans';
+import Assets from '../Home_NavBar_Labels/Assets';
 import AdminUserIcons from './AdminUserIcons';
 import AdminNavBar from '../../AdminNavBar/AdminNavBar';
 import './Navigationbar.css'; 
+
 
 const navLinks = [
   { href: "#dashboard", label: <Dashboard /> },
@@ -20,28 +21,28 @@ const navLinks = [
   { href: "#assets", label: <Assets /> },
 ];
 
+
 const NavigationBar = () => {
   return (
     <>
-      <Navbar className="custom-navbar" expand="lg" fixed="top">
+      <Navbar className="home-navbar" expand="lg" fixed="top">
         <Container fluid>
           <Navbar.Brand href="/" className="text-white">Service360</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               {navLinks.map((link, index) => (
-                <Nav.Link key={index} href={link.href} className="text-white">
+                <Nav.Link key={index} href={link.href} className='nav-link'>
                   {link.label}
                 </Nav.Link>
               ))}
-              <Button className="custom-button">Click Me</Button>
+              <Button className="home-navbar-button">Click Me</Button>
             </Nav>
             <AdminUserIcons />
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div style={{ padding: 0, margin: 0 }}> {/* Ensure no padding or margin */}
-        <AdminNavBar style={{ margin: 0, padding: 0 }} />
+      <div > {/* Ensure no padding or margin */}
+        <AdminNavBar />
       </div>
     </>
   );

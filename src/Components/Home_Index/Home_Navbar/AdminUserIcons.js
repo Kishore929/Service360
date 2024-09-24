@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavDropdown, Nav } from 'react-bootstrap';
-import SearchBar from '../NavBarLabels/SearchBar';
+import SearchBar from '../Home_NavBar_Labels/SearchBar';
 import './Navigationbar.css'; // Import the CSS file
 
 const AdminUserIcons = () => {
