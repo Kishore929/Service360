@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using Infra.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,13 @@ namespace Data.Repositories.Administration
         public List<Status> GetStatuses();
         public List<Resolution> GetResolutions();
         public List<Priority> GetPriorities();
-        public List<ProjectRole> GeProjectRoles();
+        public List<ProjectRole> GetProjectRoles();
+        public WorkSchedule GetWorkSchedule();
+        public bool AddTicketType(TicketType ticketType);
+        public TicketType GetTicketType(string ticketTypename);
+        public bool UpdateTicketType(TicketType ticketType);
+        public TicketType GetTicketType(long ticketTypeId);
+        public bool DeleteTicketType(TicketType ticketType);
     }
     
 }

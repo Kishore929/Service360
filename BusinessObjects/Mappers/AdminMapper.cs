@@ -145,5 +145,51 @@ namespace BusinessObjects.Mappers
             return null;
 
         }
+        public static WorkSchedule GetWorkSchedule(Models.WorkSchedule workScheduleModel)
+        {
+            if (workScheduleModel != null)
+            {
+                var workSchedule = new WorkSchedule();
+                workSchedule.Id = workScheduleModel.Id;
+                workSchedule.WorkingHoursPerDay = workScheduleModel.WorkingHoursPerDay;
+                workSchedule.NoOfWorkingDaysPerWeek=workScheduleModel.NoOfWorkingDaysPerWeek;
+                return workSchedule;
+            }
+            return null;
+        }
+        public static Models.TicketType AddTicketTypeModel(TicketType ticketType)
+        {
+            if (ticketType != null)
+            {
+
+                Models.TicketType _ticketType = new Models.TicketType();
+
+                _ticketType.Name = ticketType.Name;
+                _ticketType.Description = ticketType.Description;
+                _ticketType.Created = DateTime.Now;
+                _ticketType.Updated = DateTime.Now;
+                return _ticketType;
+            }
+
+            return null;
+        }
+        public static Models.TicketType UpdateTicketTypeModel(TicketType ticketType)
+        {
+            if (ticketType != null)
+            {
+
+                Models.TicketType _ticketType = new Models.TicketType();
+
+                _ticketType.Id = ticketType.Id;
+                _ticketType.Name = ticketType.Name;
+                _ticketType.Description = ticketType.Description;
+                _ticketType.Updated = DateTime.Now;
+                _ticketType.IsActive = true;    
+                return _ticketType;
+            }
+
+            return null;
+        }
+
     }
 }

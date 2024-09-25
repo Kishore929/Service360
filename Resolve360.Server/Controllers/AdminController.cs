@@ -55,5 +55,35 @@ namespace Resolve360.Server.Controllers
             return projectRoles;
 
         }
+
+        [HttpGet("GetWorkSchedule")]
+        public ClientResponse<WorkSchedule> GetWorkSchedule()
+        {
+            var workSchedule = _adminProvider.GetWorkSchedule();
+            return workSchedule;
+
+        }
+        [HttpPost("AddTicketType")]
+        public ClientResponse<List<TicketType>> AddTicketType([FromBody] TicketType ticketType)
+        {
+            var newTicketType = _adminProvider.AddTicketType(ticketType);
+            return newTicketType;
+
+        }
+        [HttpPut("UpdateTicketType")]
+        public ClientResponse<List<TicketType>> UpdateTicketType([FromBody] TicketType ticketType)
+        {
+            var newTicketType = _adminProvider.UpdateTicketType(ticketType);
+            return newTicketType;
+
+        }
+        [HttpDelete("DeleteTicketType")]
+        public ClientResponse<List<TicketType>> DeleteTicketType(long ticketTypeId)
+        {
+            var newTicketType = _adminProvider.DeleteTicketType(ticketTypeId);
+            return newTicketType;
+
+        }
+
     }
 }

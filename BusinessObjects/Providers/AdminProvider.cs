@@ -170,7 +170,7 @@ namespace BusinessObjects.Providers
             var clientResponse = new ClientResponse<List<ProjectRole>>();
             try
             {
-                var projectRoles = _adminRepository.GeProjectRoles();
+                var projectRoles = _adminRepository.GetProjectRoles();
                 if (projectRoles != null && projectRoles.Count > 0)
                 {
                     clientResponse.Result = AdminMapper.GetProjectRoles(projectRoles);
@@ -193,6 +193,171 @@ namespace BusinessObjects.Providers
                     clientResponse.Message = "Fetching ProjectRoles from DB failed, Please check db queries";
                 }
                 return clientResponse;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public ClientResponse<WorkSchedule>GetWorkSchedule()
+        {
+            var clientResponse = new ClientResponse<WorkSchedule>();
+            try
+            {
+                var workSchedule = _adminRepository.GetWorkSchedule();
+                if (workSchedule != null)
+                {
+                    clientResponse.Result = AdminMapper.GetWorkSchedule(workSchedule);
+                    if (clientResponse.Result != null)
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Success);
+                        clientResponse.Message = "WorkSchedule fetched succesfully";
+                    }
+                    else
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                        clientResponse.Message = "Fetching WorkSchedule failed, Please check logs";
+                    }
+                    return clientResponse;
+
+                }
+                else
+                {
+                    clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                    clientResponse.Message = "Fetching WorkSchedule from DB failed, Please check db queries";
+                }
+                return clientResponse;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public ClientResponse<List<TicketType>> AddTicketType(TicketType newticketType)
+        {
+            var clientResponse = new ClientResponse<List<TicketType>>();
+            try
+            {
+                var ticketType = _adminRepository.GetTicketType(newticketType.Name);
+                
+                if (ticketType != null)
+                {
+                    clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                    clientResponse.Message = $"TicketType with name {newticketType.Name} already exists,Please try with different name";
+                    return clientResponse;
+                }
+                
+                var inticketTypeModel = AdminMapper.AddTicketTypeModel(newticketType);
+                if (inticketTypeModel != null)
+                {
+                    var addedTicketType = _adminRepository.AddTicketType(inticketTypeModel);
+                    if (addedTicketType)
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Success);
+                        clientResponse.Message = $"Ticket Type {newticketType.Name} added succesfully";
+                        clientResponse.Result = GetTicketTypes().Result;
+                        return clientResponse;
+                    }
+                    else
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                        clientResponse.Message = $"TicketType addition failed, Please try again";
+                        return clientResponse;
+                    }
+                }
+                else
+                {
+                    clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                    clientResponse.Message = $"TicketType addition failed, Please try again";
+                    return clientResponse;
+
+                }
+                                   
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public ClientResponse<List<TicketType>> UpdateTicketType(TicketType ticketType)
+        {
+            var clientResponse = new ClientResponse<List<TicketType>>();
+            try
+            {
+                var oldTicketTypeData = _adminRepository.GetTicketType(ticketType.Id);
+                
+
+                var inUpdateTicketTypeModel = AdminMapper.UpdateTicketTypeModel(ticketType);
+                
+                if (inUpdateTicketTypeModel != null)
+                {
+                    var updatedTicketType = _adminRepository.UpdateTicketType(inUpdateTicketTypeModel);
+                    if (updatedTicketType)
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Success);
+                        clientResponse.Message = $"Ticket Type {inUpdateTicketTypeModel.Name} modified succesfully";
+                        clientResponse.Result = GetTicketTypes().Result;
+                        return clientResponse;
+                    }
+                    else
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                        clientResponse.Message = $"TicketType modification failed, Please try again";
+                        return clientResponse;
+                    }
+                }
+                else
+                {
+                    clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                    clientResponse.Message = $"TicketType modification failed, Please try again";
+                    return clientResponse;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public ClientResponse<List<TicketType>> DeleteTicketType(long ticketTypeId)
+        {
+            var clientResponse = new ClientResponse<List<TicketType>>();
+            try
+            {
+                    var ticketTypeObject = _adminRepository.GetTicketType(ticketTypeId);
+                    if (ticketTypeObject!=null)
+                    {
+                         var isTicketTypeDeleted = _adminRepository.DeleteTicketType(ticketTypeObject);
+                         if (isTicketTypeDeleted)
+                         {
+                           clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Success);
+                           clientResponse.Message = $"Ticket Type {ticketTypeObject.Name} deleted succesfully";
+                           clientResponse.Result = GetTicketTypes().Result;
+                           return clientResponse;
+                         }
+                         else
+                         {
+                            clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                            clientResponse.Message = $"TicketType deletion failed, Please try again";
+                            return clientResponse;
+
+                         }  
+                        
+                    }
+                    else
+                    {
+                        clientResponse = UpdateClientResponse(clientResponse, EResponseStatus.Failed);
+                        clientResponse.Message = $"TicketType deletion failed, Please try again";
+                        return clientResponse;
+                    }
+               
+
             }
             catch (Exception ex)
             {
