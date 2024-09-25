@@ -15,5 +15,9 @@ namespace BusinessObjects.Providers
         public ClientResponse<List<Resolution>> GetResolutions();
         public ClientResponse<List<Priority>> GetPriorities();
         public ClientResponse<List<ProjectRole>> GetProjectRoles();
+        public ClientResponse<WorkSchedule> GetWorkSchedule();
+        public ClientResponse<List<TicketType>> AddTicketType(TicketType ticketType);
+        public ClientResponse<List<TicketType>> UpdateTicketType(TicketType ticketType);
+        public ClientResponse<List<TicketType>> DeleteTicketType(long ticketTypeId);
     }
 }
