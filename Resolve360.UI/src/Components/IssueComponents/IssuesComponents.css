@@ -48,4 +48,28 @@
   text-decoration: underline;
 }
 
+.issues-header {
+  display: flex;
+  justify-content: space-between; /* Space between the items */
+  align-items: center; /* Center items vertically */
+  margin-left: 0;
+  padding: 0 10px;
+}
+
+.issues-header button {
+  background-color: blue; /* Blue background */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Slightly rounded corners */
+  padding: 5px 10px; /* Padding for better size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.issues-header button:hover {
+  background-color: darkblue; /* Darker blue on hover */
+}
   
+
+
+

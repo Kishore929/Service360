@@ -1,0 +1,56 @@
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 400px; /* Set width of the pop-up */
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+  }
+  
+  .popup form div {
+    margin-bottom: 10px;
+  }
+  
+  .popup label {
+    display: block;
+    margin-bottom: 3px;
+  }
+  
+  .popup input, .popup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+
+  .popup button {
+    background-color: blue; /* Blue background for buttons */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-right: 20px; /* Space between buttons */
+}
+
+.popup button:hover {
+    background-color: darkblue; /* Darker blue on hover */
+}

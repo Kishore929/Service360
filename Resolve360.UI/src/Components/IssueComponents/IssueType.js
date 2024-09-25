@@ -2,11 +2,17 @@
 import React, { Component } from 'react';
 import './IssuesComponents.css'; 
 import { fetchTicketTypes } from '../../Service';
+import AddIssueType from './AddIssueType';
 
 class IssueTypes extends Component {
   state = {
     ticketTypes: [],
+    isOpen: false,
   };
+
+  setIsOpen = (isOpen) => {
+    this.setState({ isOpen });
+};
 
   async componentDidMount() {
     const data = await fetchTicketTypes();
@@ -28,7 +34,14 @@ class IssueTypes extends Component {
     
     return (
       <div className="issues-container">
-        <h5>Issue Types</h5>
+        <div>
+                <div className='issues-header'>
+                    <h5>Issue Types</h5>
+                    <button onClick={() => this.setIsOpen(true)}>Add Issue Types</button>
+                </div>
+                {/* Pass the isOpen state and setIsOpen function to the Dashboard */}
+                <AddIssueType isOpen={this.state.isOpen} setIsOpen={this.setIsOpen} />
+          </div>
         <table className="table">
           <thead>
             <tr>

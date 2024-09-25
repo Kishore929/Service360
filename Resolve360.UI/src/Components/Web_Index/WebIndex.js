@@ -49,7 +49,6 @@ const WebIndex = () => {
         </Container>
       </Navbar>
       <Footer />
-
     </>
   );
 
