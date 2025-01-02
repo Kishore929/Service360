@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+# Service_360
+Service_360 is a project management and issue tracking tool developed by [..], primarily used for agile software development. It enables teams to plan, track, and manage software projects through customizable workflows, backlogs, and reporting features. Service_360 supports collaboration by allowing teams to prioritize tasks, assign responsibilities, and monitor progress in real-time.
