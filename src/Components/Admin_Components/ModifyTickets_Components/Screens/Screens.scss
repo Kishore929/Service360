@@ -1,0 +1,264 @@
+$primary-color: #007bff;
+$secondary-color: rgb(185, 185, 192);
+$highlight-color: #66b3ff;
+$input-background-focus: #e7f1ff;
+$border-radius: 4px;
+$transition-duration: 0.3s;
+
+.Screens-container {
+  margin: -25px;
+  padding: 20px;
+}
+
+.Screens-input,
+.Screens-textarea {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  transition: border $transition-duration, background-color $transition-duration;
+}
+
+.Screens-input:focus,
+.Screens-textarea:focus {
+  border: 2px solid $highlight-color;
+  outline: none;
+  background-color: $input-background-focus;
+}
+
+.Screens-input-highlight,
+.Screens-textarea-highlight {
+  border: 2px solid $primary-color;
+  background-color: $input-background-focus;
+}
+
+.Screens-add-button,
+.Screens-cancel-button,
+.Screens-add-tickettypebatch-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color $transition-duration;
+}
+
+.Screens-add-tickettypebatch-btn,
+.Screens-add-button {
+  background-color: $primary-color;
+  color: white;
+}
+
+.Screens-cancel-button {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.Screens-cancel-button:hover {
+  background-color: darken($secondary-color, 10%);
+}
+
+.Screens-add-button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Screens-error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.Screens-header-row-screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .Screens-add-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.Screens-action-link {
+  color: $primary-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $transition-duration, transform $transition-duration, text-decoration $transition-duration;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+}
+
+.Screens-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: none;
+}
+
+.Screens-table th,
+.Screens-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Screens-table th {
+  color: rgb(20, 5, 5);
+  font-weight: bold;
+}
+
+.Screens-table tr:hover {
+  background-color: #eef4f5;
+  cursor: pointer;
+}
+
+.Screens-table tr {
+  transition: background-color 0.3s ease;
+}
+
+// Dropdown Menu Styles
+.Screens-dropdown-menu-simple {
+  position: absolute;
+  background-color: white;
+  align-items: end;
+  padding: 8px 10px;
+  z-index: 1000;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Screens-dropdown-item-screen {
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: #b1aaaa89;
+  }
+
+  &:active {
+    background-color: #dcdcdc;
+  }
+}
+
+// Hover Effects for 3 dots
+.Screens-dropdown-item-screen:hover {
+  background-color: #b8ddf5;
+}
+
+.Screens-td-3dots {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.Screens-td-3dots.highlight {
+  color: blue;
+}
+
+.Screens-select {
+  width: 60%;
+  padding: 5px;
+  
+  border-radius: $border-radius;
+  font-size: 16px;
+  transition: border $transition-duration, background-color $transition-duration;
+
+  & .react-select__control {
+    padding: 5px;
+    border-radius: $border-radius;
+    border: 1px solid #ccc;
+    transition: border-color $transition-duration, box-shadow $transition-duration;
+  }
+
+  & .react-select__control--is-focused {
+    border-color: $highlight-color;
+    box-shadow: 0 0 0 1px $highlight-color;
+  }
+
+  & .react-select__indicator {
+    color: $primary-color;
+  }
+
+  & .react-select__menu {
+    border-radius: $border-radius;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  & .react-select__option {
+    padding: 10px;
+    transition: background-color $transition-duration;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eef4f5;
+    }
+
+    &.react-select__option--is-selected {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    &.react-select__option--is-focused {
+      background-color: $highlight-color;
+    }
+  }
+
+  & .react-select__placeholder {
+    color: #888;
+  }
+
+  & .react-select__single-value {
+    color: #333;
+  }
+
+  & .react-select__menu-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+.Screens-table tr:hover .remove-button {
+  visibility: visible;
+}
+.remove-button {
+  visibility: hidden;
+  background-color: red; /* or any other styling */
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}

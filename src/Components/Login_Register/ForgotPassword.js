@@ -1,6 +1,6 @@
 // src/ForgotPassword.js
 import React, { useState } from 'react';
-import './Login_Register.css';
+import './Login_Register.scss';
 
 
 const ForgotPassword = () => {

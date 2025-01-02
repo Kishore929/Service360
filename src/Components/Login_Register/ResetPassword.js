@@ -1,6 +1,6 @@
 // src/ResetPassword.js
 import React, { useState } from 'react';
-import './Login_Register.css';
+import './Login_Register.scss';
 import { useNavigate } from 'react-router-dom';
 
 

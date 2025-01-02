@@ -1,0 +1,149 @@
+$primary-color:#007bff;
+$secondary-color: rgb(185, 185, 192);
+$highlight-color: #66b3ff;
+$input-background-focus: #e7f1ff;
+$border-radius: 4px;
+$transition-duration: 0.3s;
+
+.Ticket_Type-container {
+  margin: -25px;
+  padding: 20px;
+}
+
+.Ticket_Type-input,
+.Ticket_Type-textarea {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  transition: border $transition-duration, background-color $transition-duration;
+}
+
+.Ticket_Type-input:focus,
+.Ticket_Type-textarea:focus {
+  border: 2px solid $highlight-color;
+  outline: none;
+  background-color: $input-background-focus;
+}
+
+.Ticket_Type-input-highlight,
+.Ticket_Type-textarea-highlight {
+  border: 2px solid $primary-color;
+  background-color: $input-background-focus;
+}
+
+.Ticket_Type-add-button,
+.Ticket_Type-cancel-button,
+.Ticket_Type-add-tickettype-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color $transition-duration;
+}
+
+.Ticket_Type-add-tickettype-btn,
+.Ticket_Type-add-button {
+  background-color: $primary-color;
+  color: white;
+}
+
+.Ticket_Type-cancel-button {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.Ticket_Type-cancel-button:hover {
+  background-color: darken($secondary-color, 10%);
+}
+
+.Ticket_Type-add-button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Ticket_Type-error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.Ticket_Type-header-row-tickettype {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .Ticket_Type-add-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.Ticket_Type-action-link {
+  color: $primary-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $transition-duration, transform $transition-duration, text-decoration $transition-duration;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+}
+
+.Ticket_Type-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: none;
+}
+
+.Ticket_Type-table th,
+.Ticket_Type-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Ticket_Type-table th {
+  color: rgb(20, 5, 5);
+  font-weight: bold;
+}
+
+.Ticket_Type-table tr:hover {
+  background-color: #eef4f5;
+  cursor: pointer;
+}
+
+.Ticket_Type-table tr {
+  transition: background-color 0.3s ease;
+}

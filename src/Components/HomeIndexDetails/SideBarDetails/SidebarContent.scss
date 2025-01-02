@@ -1,0 +1,93 @@
+.sidebar-content-container {
+  display: flex;
+  margin-top: 30px;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  margin-top: 0px;
+  margin-left: 85px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar {
+  margin-top: 25px;
+  width: 200px;
+  transition: width 0.3s ease;
+  background-color: #f8f9fa;
+  // height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  position: fixed;
+  top: 20px;
+  left: 0;
+}
+
+.sidebar.closed {
+  width: 50px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.sidebar.closed ~ .content-area {
+  margin-left: 0px;
+}
+
+.toggle-button {
+  background-color: rgb(208, 226, 245);
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: fixed;
+  top: 50px;
+  left: 180px;
+  border-radius: 50%;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar.closed ~ .toggle-button {
+  left: 30px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.sidebar-links .nav-link {
+  display: block;
+  margin-bottom: 0.1px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-links .nav-link:hover {
+  background-color: #e9ecef;
+}
+
+.sidebar-links .nav-link.active {
+  color: hwb(222 0% 0%);
+  background-color: hsl(200, 45%, 87%);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.sidebar-links .nav-link.active:hover {
+  background-color: rgb(155, 173, 197);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

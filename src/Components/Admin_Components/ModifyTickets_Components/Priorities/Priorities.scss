@@ -1,0 +1,229 @@
+$primary-color: #007bff;
+$secondary-color: rgb(185, 185, 192);
+$highlight-color: #66b3ff;
+$input-background-focus: #e7f1ff;
+$border-radius: 4px;
+$transition-duration: 0.3s;
+
+.Priorities-container {
+  margin: -25px;
+  padding: 20px;
+}
+
+.Priorities-input,
+.Priorities-textarea {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  transition: border $transition-duration, background-color $transition-duration;
+}
+
+.Priorities-input:focus,
+.Priorities-textarea:focus {
+  border: 2px solid $highlight-color;
+  outline: none;
+  background-color: $input-background-focus;
+}
+
+.Priorities-input-highlight,
+.Priorities-textarea-highlight {
+  border: 2px solid $primary-color;
+  background-color: $input-background-focus;
+}
+
+.Priorities-add-button,
+.Priorities-cancel-button,
+.Priorities-add-priority-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color $transition-duration;
+}
+
+.Priorities-add-priority-btn,
+.Priorities-add-button {
+  background-color: $primary-color;
+  color: white;
+}
+
+.Priorities-cancel-button {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.Priorities-cancel-button:hover {
+  background-color: darken($secondary-color, 10%);
+}
+
+.Priorities-add-button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Priorities-error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.Priorities-header-row-priority {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .Priorities-add-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.Priorities-action-link {
+  color: $primary-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $transition-duration, transform $transition-duration, text-decoration $transition-duration;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+}
+
+.Priorities-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: none;
+}
+
+.Priorities-table th,
+.Priorities-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.Priorities-table th {
+  color: rgb(20, 5, 5);
+  font-weight: bold;
+}
+
+.Priorities-table tr:hover {
+  background-color: #eef4f5;
+  cursor: pointer;
+}
+
+.Priorities-table tr {
+  transition: background-color 0.3s ease;
+}
+
+// Dropdown Menu Styles
+.Priorities-dropdown-menu-simple {
+  position: absolute;
+  background-color: white;
+  align-items: end;
+  padding: 8px 10px;
+  z-index: 1000;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Priorities-dropdown-item-priority {
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: #b1aaaa89;
+  }
+
+  &:active {
+    background-color: #dcdcdc;
+  }
+}
+
+// Hover Effects for 3 dots
+.Priorities-dropdown-item-priority:hover {
+  background-color: #b8ddf5;
+}
+
+.Priorities-td-3dots {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.Priorities-td-3dots.highlight {
+  color: $primary-color;
+}
+
+/* Color Preview */
+.Priorities-color-preview {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.Priorities-color-selection {
+  margin-bottom: 15px;
+}
+
+.Priorities-color-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.Priorities-color-option {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* Error Messages */
+.Priorities-error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

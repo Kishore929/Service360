@@ -1,0 +1,32 @@
+{
+
+    "ModifyUsers": [
+      { "key": "ticketTypes", "label": "Ticket Types", "path": "/home/modifyUsers/ticketTypes" },
+      { "key": "ticketTypeBatches", "label": "Ticket Type Batches", "path": "/home/modifyUsers/ticketTypeBatches" },
+      { "key": "customFields", "label": "Custom Fields", "path": "/home/modifyUsers/customFields" },
+      { "key": "status", "label": "Statuses", "path": "/home/modifyUsers/status" },
+      { "key": "resolution", "label": "Resolution", "path": "/home/modifyUsers/resolution" },
+      { "key": "priorities", "label": "Priorities", "path": "/home/modifyUsers/priorities" },
+      { "key": "screens", "label": "Screens", "path": "/home/modifyUsers/screens" },
+      { "key": "screenBatches", "label": "Screen Batches", "path": "/home/modifyUsers/screenBatches" },
+      { "key": "TTScreenBatches", "label": "TT Screen Batches", "path": "/home/modifyUsers/TTScreenBatches" }
+    ],
+
+    "ManageUsers": [
+      { "key": "ticketTypes", "label": "Ticket Types", "path": "/home/manageUsers/ticketTypes" },
+      { "key": "ticketTypeBatches", "label": "Ticket Type Batches", "path": "/home/manageUsers/ticketTypeBatches" },
+      { "key": "customFields", "label": "Custom Fields", "path": "/home/manageUsers/customFields" }
+    ],
+
+    "Projects": [
+      { "key": "manageProjects", "label": "Manage Projects", "path": "/home/projects/manageProjects" },
+      { "key": "projectCategories", "label": "Project Categories", "path": "/home/projects/projectCategories" }
+    ],
+
+    "ProjectDetails": [
+      { "key": "components", "label": "Components", "path": "/home/projects/ProjectDetails/components/${projectId}" },
+      { "key": "versions", "label": "Versions", "path": "/home/projects/ProjectDetails/versions/${projectId}" }
+    ]
+
+}
+  

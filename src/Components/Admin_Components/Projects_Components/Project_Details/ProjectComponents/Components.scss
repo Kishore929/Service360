@@ -1,0 +1,86 @@
+.header-row-components {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns h4 and button to opposite ends */
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+/* Button styling for Add and Remove */
+.components-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.components-btn:hover {
+    background-color: #0056b3;
+}
+
+
+h4 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.multi-select {
+    width: 80%;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* table styles */
+.components-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Prevent double borders */
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.components-table th,
+.components-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Button styles */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 20px;
+    /* Add some space between buttons */
+}
+
+.project-form input,
+.project-form textarea {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+    border: 2px solid #66b3ff;
+    outline: none;
+    background-color: #e7f1ff;
+}
+
+.project-form--highlight,
+.project-form-highlight {
+    border: 2px solid #007bff;
+    background-color: #e7f1ff;
+}

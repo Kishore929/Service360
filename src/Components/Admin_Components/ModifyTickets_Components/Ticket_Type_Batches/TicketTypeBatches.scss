@@ -1,0 +1,191 @@
+$primary-color: #007bff;
+$secondary-color: rgb(185, 185, 192);
+$highlight-color: #66b3ff;
+$input-background-focus: #e7f1ff;
+$border-radius: 4px;
+$transition-duration: 0.3s;
+
+.TT_Batches-container {
+  margin: -25px;
+  padding: 20px;
+}
+
+.TT_Batches-input,
+.TT_Batches-textarea {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  transition: border $transition-duration, background-color $transition-duration;
+}
+
+.TT_Batches-input:focus,
+.TT_Batches-textarea:focus {
+  border: 2px solid $highlight-color;
+  outline: none;
+  background-color: $input-background-focus;
+}
+
+.TT_Batches-input-highlight,
+.TT_Batches-textarea-highlight {
+  border: 2px solid $primary-color;
+  background-color: $input-background-focus;
+}
+
+.TT_Batches-add-button,
+.TT_Batches-cancel-button,
+.TT_Batches-add-tickettypebatch-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color $transition-duration;
+}
+
+.TT_Batches-add-tickettypebatch-btn,
+.TT_Batches-add-button {
+  background-color: $primary-color;
+  color: white;
+}
+
+.TT_Batches-cancel-button {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.TT_Batches-cancel-button:hover {
+  background-color: darken($secondary-color, 10%);
+}
+
+.TT_Batches-add-button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.TT_Batches-error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.TT_Batches-header-row-tickettypebatch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+
+  .TT_Batches-add-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.TT_Batches-action-link {
+  color: $primary-color;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color $transition-duration, transform $transition-duration, text-decoration $transition-duration;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+}
+
+.TT_Batches-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: none;
+}
+
+.TT_Batches-table th,
+.TT_Batches-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.TT_Batches-table th {
+  color: rgb(20, 5, 5);
+  font-weight: bold;
+}
+
+.TT_Batches-table tr:hover {
+  background-color: #eef4f5;
+  cursor: pointer;
+}
+
+.TT_Batches-table tr {
+  transition: background-color 0.3s ease;
+}
+
+// Dropdown Menu Styles
+.TT_Batches-dropdown-menu-simple {
+  position: absolute;
+  background-color: white;
+  align-items: end;
+  padding: 8px 10px;
+  z-index: 1000;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.TT_Batches-dropdown-item-batches {
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: #b1aaaa89;
+  }
+
+  &:active {
+    background-color: #dcdcdc;
+  }
+}
+
+// Hover Effects for 3 dots
+.TT_Batches-dropdown-item-batches:hover {
+  background-color: #b8ddf5;
+}
+
+
+.TT_Batches-td-3dots {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.TT_Batches-td-3dots.highlight {
+  color: blue;
+}

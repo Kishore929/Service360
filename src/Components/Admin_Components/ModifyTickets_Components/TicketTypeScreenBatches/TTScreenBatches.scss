@@ -1,0 +1,210 @@
+$primary-color: #007bff;
+$secondary-color: rgb(185, 185, 192);
+$highlight-color: #b6d2ef;
+$input-background-focus: #e7f1ff;
+$border-radius: 4px;
+$transition-duration: 0.3s;
+
+.TTScreenBatches-container {
+  margin: -25px;
+  padding: 20px;
+}
+
+.TTScreenBatches-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  h4 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .TTScreenBatches-add-button {
+    padding: 8px 15px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.TTScreenBatches-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+}
+
+.TTScreenBatches-table th,
+.TTScreenBatches-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.TTScreenBatches-table th {
+  color: rgb(20, 5, 5);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.TTScreenBatches-table td {
+  font-size: 0.95rem;
+}
+
+.TTScreenBatches-table tr:hover {
+  background-color: #eef4f5;
+  cursor: pointer;
+}
+
+.TTScreenBatches-table tr {
+  transition: background-color 0.3s ease;
+}
+
+.TTScreenBatches-error-message {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.TTScreenBatches-add-button {
+  padding: 8px 15px;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.TTScreenBatches-cancel-button {
+  padding: 8px 15px;
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.TTScreenBatches-input,
+.TTScreenBatches-textarea {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  transition: border $transition-duration, background-color $transition-duration;
+
+  &:focus {
+    border: 2px solid $highlight-color;
+    outline: none;
+    background-color: $input-background-focus;
+  }
+
+  &-highlight {
+    border: 2px solid $primary-color;
+    background-color: $input-background-focus;
+  }
+}
+
+.TTScreenBatches-dropdown-menu-simple {
+  position: absolute;
+  background-color: white;
+  align-items: end;
+  padding: 8px 10px;
+  z-index: 1000;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.TTScreenBatches-dropdown-item-batches {
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: #b1aaaa89;
+  }
+
+  &:active {
+    background-color: #dcdcdc;
+  }
+}
+
+.TTScreenBatches-dropdown-item-batches:hover {
+  background-color: #b8ddf5;
+}
+
+.TTScreenBatches-td-3dots {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.TTScreenBatches-td-3dots.highlight {
+  color: blue;
+}
+
+.TTScreenBatches-DropSelect {
+  width: 60%;
+  padding: 5px;
+  border-radius: $border-radius;
+  font-size: 16px;
+  transition: border $transition-duration, background-color $transition-duration;
+  background-color: white;
+  border: 1px solid #ccc;
+
+  &:focus {
+    border-color: $highlight-color;
+    box-shadow: 0 0 0 1px $highlight-color;
+    background-color: white;
+  }
+
+  &:hover {
+    background-color: #eef4f5;
+  }
+
+  option {
+    padding: 10px;
+    transition: background-color $transition-duration;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+
+    &:hover {
+      background-color: #cce5ff;
+      color: #333;
+    }
+
+    &:checked, &:selected {
+      background-color: #007bff;
+      color: white;
+    }
+
+    &:focus {
+      background-color: #80b3ff;
+      color: #333;
+    }
+  }
+}
